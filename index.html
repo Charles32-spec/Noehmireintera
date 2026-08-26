@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nohemi Renteria for Niagara Falls City Council — 2026</title>
+<meta name="description" content="Nohemi Renteria, certified candidate for Niagara Falls City Council, 2026 Municipal Election. Community safety, seniors, responsible growth, and a stronger downtown.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-900:#0A1830;
+    --navy-800:#0F2340;
+    --navy-700:#16324F;
+    --teal-600:#0E8C6C;
+    --teal-700:#0B7259;
+    --teal-050:#E7F4EF;
+    --sand-050:#F6F5F0;
+    --ink:#161F2B;
+    --ink-soft:#4B5763;
+    --line:#DFE3E0;
+    --white:#FFFFFF;
+    --max:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.disp{
+    font-family:'Barlow Condensed',system-ui,sans-serif;
+    font-weight:800;
+    letter-spacing:.01em;
+    line-height:1.02;
+    margin:0;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:700;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-size:14px;
+    color:var(--teal-700);
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    font-size:16px;
+    padding:14px 26px;border-radius:4px;
+    text-decoration:none;border:2px solid transparent;
+    cursor:pointer;transition:transform .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--teal-600);color:var(--white);}
+  .btn-primary:hover{background:var(--teal-700);}
+  .btn-outline-light{background:transparent;color:var(--white);border-color:rgba(255,255,255,.55);}
+  .btn-outline-light:hover{border-color:var(--white);background:rgba(255,255,255,.08);}
+  .btn-outline-dark{background:transparent;color:var(--navy-800);border-color:var(--navy-800);}
+  .btn-outline-dark:hover{background:var(--navy-800);color:var(--white);}
+
+  /* wave divider — signature motif */
+  .wave{width:86px;height:14px;margin:14px 0 0;}
+  .wave path{fill:none;stroke:var(--teal-600);stroke-width:3.5;stroke-linecap:round;}
+
+  /* ===== Header ===== */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--navy-900);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .headbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 28px;max-width:var(--max);margin:0 auto;gap:20px;
+  }
+  .brand{display:flex;flex-direction:column;line-height:.92;text-decoration:none;}
+  .brand .fn{
+    font-family:'Barlow Condensed',sans-serif;font-weight:800;
+    font-size:26px;color:var(--white);letter-spacing:.01em;
+  }
+  .brand .ln{
+    font-family:'Barlow Condensed',sans-serif;font-weight:800;
+    font-size:26px;color:var(--teal-600);letter-spacing:.01em;
+  }
+  .brand .tag{
+    font-size:10px;color:rgba(255,255,255,.6);letter-spacing:.12em;
+    text-transform:uppercase;margin-top:3px;font-family:'Inter',sans-serif;font-weight:600;
+  }
+  nav.mainnav{display:flex;align-items:center;gap:28px;}
+  nav.mainnav a{
+    font-family:'Barlow Condensed',sans-serif;font-weight:600;
+    font-size:16px;letter-spacing:.03em;text-transform:uppercase;
+    color:rgba(255,255,255,.85);text-decoration:none;
+    padding-bottom:4px;border-bottom:2px solid transparent;
+    transition:color .15s, border-color .15s;
+  }
+  nav.mainnav a:hover{color:var(--white);border-color:var(--teal-600);}
+  .navcta{display:flex;align-items:center;gap:18px;}
+  .hamburger{display:none;background:none;border:0;color:var(--white);font-size:26px;cursor:pointer;}
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;background:var(--white);overflow:hidden;
+    padding:64px 0 0;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;
+  }
+  .hero-copy{padding-bottom:56px;}
+  .hero h1{font-size:56px;color:var(--navy-800);margin-top:14px;}
+  .hero h1 .accent{color:var(--teal-600);}
+  .hero .sub{
+    font-family:'Barlow Condensed',sans-serif;font-weight:700;
+    font-size:22px;color:var(--navy-700);letter-spacing:.02em;
+    margin-top:6px;text-transform:uppercase;
+  }
+  .pillars{
+    display:flex;flex-wrap:wrap;gap:10px 0;margin-top:22px;
+    font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:600;
+    color:var(--ink-soft);letter-spacing:.02em;
+  }
+  .pillars span.dot{color:var(--teal-600);margin:0 12px;}
+  .hero-actions{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;}
+  .hero-photo{
+    position:relative;height:100%;min-height:520px;
+    display:flex;align-items:flex-end;justify-content:center;
+  }
+  .hero-photo .backdrop{
+    position:absolute;right:-40px;top:6%;bottom:0;left:14%;
+    background:linear-gradient(160deg,var(--navy-800),var(--teal-700));
+    border-radius:14px 14px 0 0;
+  }
+  .hero-photo .backdrop::before{
+    content:"";position:absolute;inset:0;
+    background-image:radial-gradient(rgba(255,255,255,.14) 1.5px, transparent 1.5px);
+    background-size:22px 22px;
+    border-radius:inherit;
+    opacity:.5;
+  }
+  .hero-photo img{
+    position:relative;z-index:2;
+    width:auto;max-width:92%;
+    height:560px;object-fit:contain;object-position:50% 100%;
+    filter:drop-shadow(0 24px 30px rgba(5,14,28,.42));
+  }
+  .badge-cert{
+    position:absolute;z-index:3;left:0;bottom:36px;
+    background:var(--white);border-radius:8px;
+    padding:14px 18px;box-shadow:0 14px 30px -14px rgba(10,24,48,.35);
+    display:flex;align-items:center;gap:12px;
+    max-width:240px;
+  }
+  .badge-cert .dot{
+    width:10px;height:10px;border-radius:50%;background:var(--teal-600);flex:none;
+    box-shadow:0 0 0 4px var(--teal-050);
+  }
+  .badge-cert .t1{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;color:var(--navy-800);letter-spacing:.02em;}
+  .badge-cert .t2{font-size:12px;color:var(--ink-soft);}
+
+  /* ===== Info strip ===== */
+  .infostrip{
+    background:var(--navy-800);color:var(--white);
+    padding:16px 0;margin-top:56px;
+  }
+  .infostrip .wrap{
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px 30px;
+  }
+  .istat{display:flex;align-items:baseline;gap:10px;}
+  .istat .num{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:26px;color:var(--teal-600);}
+  .istat .lbl{font-size:13px;color:rgba(255,255,255,.72);letter-spacing:.03em;}
+  #countdown{display:flex;gap:18px;}
+  #countdown div{text-align:center;}
+  #countdown .n{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:26px;color:var(--white);display:block;}
+  #countdown .l{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);}
+
+  /* ===== Section shells ===== */
+  section{padding:90px 0;}
+  .section-alt{background:var(--sand-050);}
+  .sec-head{max-width:640px;margin-bottom:48px;}
+  .sec-head h2{font-size:42px;color:var(--navy-800);margin-top:10px;}
+  .sec-head p{color:var(--ink-soft);font-size:17px;margin-top:14px;}
+
+  /* ===== Priority cards ===== */
+  .pri-grid{
+    display:grid;grid-template-columns:repeat(5,1fr);gap:18px;
+  }
+  .pri-card{
+    background:var(--white);border:1px solid var(--line);border-radius:10px;
+    padding:26px 20px;text-align:left;
+    transition:border-color .15s, transform .15s, box-shadow .15s;
+  }
+  .pri-card:hover{border-color:var(--teal-600);transform:translateY(-4px);box-shadow:0 18px 34px -22px rgba(10,24,48,.28);}
+  .pri-card .icon{
+    width:46px;height:46px;border-radius:50%;
+    background:var(--teal-050);display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+  }
+  .pri-card .icon svg{width:22px;height:22px;stroke:var(--teal-700);}
+  .pri-card h3{font-size:19px;color:var(--navy-800);letter-spacing:.01em;line-height:1.12;}
+  .pri-card p{font-size:14px;color:var(--ink-soft);margin-top:10px;}
+  .pri-card .jump{
+    display:inline-block;margin-top:14px;font-size:13px;font-weight:600;color:var(--teal-700);
+    text-decoration:none;border-bottom:1px solid var(--teal-600);
+  }
+
+  /* ===== Priority detail accordion ===== */
+  .pri-detail{max-width:840px;margin:0 auto;}
+  details.pri-item{
+    border-bottom:1px solid var(--line);padding:26px 0;
+  }
+  details.pri-item summary{
+    list-style:none;cursor:pointer;display:flex;align-items:center;gap:18px;
+  }
+  details.pri-item summary::-webkit-details-marker{display:none;}
+  details.pri-item .num{
+    font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;
+    color:var(--teal-600);width:40px;flex:none;
+  }
+  details.pri-item summary h3{
+    font-size:24px;color:var(--navy-800);flex:1;
+  }
+  details.pri-item summary .chev{
+    font-size:22px;color:var(--ink-soft);transition:transform .2s;flex:none;
+  }
+  details.pri-item[open] summary .chev{transform:rotate(45deg);}
+  details.pri-item .pri-body{
+    padding:16px 0 0 58px;color:var(--ink-soft);font-size:16px;max-width:700px;
+  }
+  details.pri-item .pri-body .lede{
+    font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;
+    color:var(--navy-700);text-transform:none;margin-bottom:10px;display:block;letter-spacing:.01em;
+  }
+  details.pri-item .pri-body p{margin:0 0 12px;}
+  details.pri-item .pri-body p:last-child{margin-bottom:0;}
+
+  /* ===== Story ===== */
+  .story-grid{
+    display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center;
+  }
+  .story-photo{position:relative;display:flex;align-items:flex-end;justify-content:center;height:460px;}
+  .story-photo .plinth{
+    position:absolute;left:8%;right:8%;bottom:0;top:10%;
+    background:var(--teal-050);border-radius:10px;z-index:0;
+  }
+  .story-photo img{
+    position:relative;z-index:1;
+    width:auto;max-width:90%;height:100%;object-fit:contain;object-position:50% 100%;
+    filter:drop-shadow(0 18px 22px rgba(10,24,48,.22));
+  }
+  .story-photo .frame{
+    position:absolute;top:0;left:0;right:-18px;bottom:-18px;
+    border:3px solid var(--teal-600);border-radius:10px;z-index:-1;
+  }
+  .story-copy h2{font-size:38px;color:var(--navy-800);}
+  .story-copy .lede{font-size:18px;color:var(--ink);margin-top:18px;}
+  .story-copy p{color:var(--ink-soft);font-size:16px;margin-top:14px;}
+  .pull{
+    margin-top:26px;padding:20px 24px;border-left:4px solid var(--teal-600);
+    background:var(--teal-050);border-radius:0 8px 8px 0;
+  }
+  .pull p{
+    font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:20px;
+    color:var(--navy-800);margin:0;letter-spacing:.005em;line-height:1.3;font-style:normal;
+    text-transform:none;
+  }
+
+  /* ===== CTA banner ===== */
+  .cta-banner{
+    background:linear-gradient(120deg,var(--navy-900),var(--navy-700));
+    color:var(--white);
+  }
+  .cta-inner{
+    display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;
+  }
+  .cta-inner h2{font-size:36px;color:var(--white);}
+  .cta-inner p{color:rgba(255,255,255,.75);margin-top:10px;max-width:480px;font-size:15px;}
+  .cta-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .legal-note{
+    margin-top:26px;font-size:12px;color:rgba(255,255,255,.55);max-width:760px;line-height:1.5;
+    border-top:1px solid rgba(255,255,255,.14);padding-top:18px;
+  }
+
+  /* ===== Contact ===== */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:26px;}
+  .contact-card{
+    background:var(--white);border:1px solid var(--line);border-radius:10px;padding:28px 24px;
+  }
+  .contact-card .icon{
+    width:42px;height:42px;border-radius:50%;background:var(--teal-050);
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+  }
+  .contact-card .icon svg{width:20px;height:20px;stroke:var(--teal-700);}
+  .contact-card h3{font-size:19px;color:var(--navy-800);margin-bottom:6px;}
+  .contact-card a.link, .contact-card .val{
+    color:var(--ink-soft);text-decoration:none;font-size:15px;
+  }
+  .contact-card a.link:hover{color:var(--teal-700);}
+
+  /* ===== Footer ===== */
+  footer{background:var(--navy-900);color:rgba(255,255,255,.72);padding:52px 0 26px;}
+  .foot-top{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;
+    padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.12);
+  }
+  .foot-brand .fn, .foot-brand .ln{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;}
+  .foot-brand .fn{color:var(--white);}
+  .foot-brand .ln{color:var(--teal-600);}
+  .foot-brand .tag{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:4px;}
+  .foot-nav{display:flex;gap:26px;flex-wrap:wrap;}
+  .foot-nav a{font-size:14px;color:rgba(255,255,255,.72);text-decoration:none;}
+  .foot-nav a:hover{color:var(--white);}
+  .foot-social{display:flex;gap:12px;}
+  .foot-social a{
+    width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.25);
+    display:flex;align-items:center;justify-content:center;text-decoration:none;
+  }
+  .foot-social a svg{width:16px;height:16px;stroke:var(--white);}
+  .foot-social a:hover{background:var(--teal-600);border-color:var(--teal-600);}
+  .foot-bottom{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    padding-top:22px;font-size:12px;color:rgba(255,255,255,.5);
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-photo{order:-1;min-height:380px;margin-top:10px;}
+    .hero-photo img{height:400px;}
+    .badge-cert{left:8px;bottom:16px;}
+    .pri-grid{grid-template-columns:repeat(2,1fr);}
+    .contact-grid{grid-template-columns:1fr;}
+    .story-grid{grid-template-columns:1fr;}
+    .story-photo{margin-bottom:10px;}
+    nav.mainnav{display:none;}
+    .hamburger{display:block;}
+    .cta-inner{flex-direction:column;align-items:flex-start;}
+  }
+  @media (max-width:560px){
+    .hero h1{font-size:38px;}
+    .sec-head h2{font-size:32px;}
+    .pri-grid{grid-template-columns:1fr;}
+    .infostrip .wrap{flex-direction:column;align-items:flex-start;}
+    details.pri-item .pri-body{padding-left:0;margin-top:10px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="headbar">
+    <a href="#top" class="brand">
+      <span class="fn">NOHEMI</span>
+      <span class="ln">RENTERIA</span>
+      <span class="tag">For Niagara Falls City Council</span>
+    </a>
+    <nav class="mainnav">
+      <a href="#story">My Story</a>
+      <a href="#priorities">Priorities</a>
+      <a href="#involved">Get Involved</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="navcta">
+      <a href="#involved" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Donate</a>
+      <button class="hamburger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="padding-top:64px;">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">2026 Municipal Election · Niagara Falls</div>
+        <h1>NIAGARA FALLS:<br><span class="accent">MORE THAN THE FALLS.</span></h1>
+        <div class="sub">Our Community. Our Future.</div>
+        <svg class="wave" viewBox="0 0 86 14"><path d="M1 10 C 14 2, 22 2, 30 10 S 46 18, 54 10 S 70 2, 78 10"/></svg>
+        <div class="pillars">Safer Neighbourhoods<span class="dot">•</span>Seniors First<span class="dot">•</span>Responsible Growth</div>
+        <div class="hero-actions">
+          <a href="#story" class="btn btn-primary">Meet Nohemi</a>
+          <a href="#priorities" class="btn btn-outline-dark">See Her Priorities</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="backdrop"></div>
+        <img src="assets/nohemi-headshot-cutout.png" alt="Nohemi Renteria, candidate for Niagara Falls City Council">
+        <div class="badge-cert">
+          <span class="dot"></span>
+          <div>
+            <div class="t1">2026 Certified Candidate</div>
+            <div class="t2">City of Niagara Falls</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO STRIP -->
+  <div class="infostrip">
+    <div class="wrap">
+      <div class="istat">
+        <span class="num">At-Large</span>
+        <span class="lbl">City Council seat<br>— votes city-wide</span>
+      </div>
+      <div id="countdown">
+        <div><span class="n" id="cd-days">--</span><span class="l">Days</span></div>
+        <div><span class="n" id="cd-hours">--</span><span class="l">Hrs</span></div>
+        <div><span class="n" id="cd-mins">--</span><span class="l">Min</span></div>
+        <div><span class="n" id="cd-secs">--</span><span class="l">Sec</span></div>
+      </div>
+      <div class="istat">
+        <span class="num">Oct 26</span>
+        <span class="lbl">Election Day<br>10am – 8pm</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIORITIES TEASER -->
+  <section id="priorities" class="section-alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Where Nohemi Stands</div>
+        <h2>Five priorities for a stronger Niagara Falls</h2>
+        <p>Real issues residents raise every day — not a long policy essay. Tap any priority below to read Nohemi's full position.</p>
+      </div>
+
+      <div class="pri-grid">
+
+        <div class="pri-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6z"/></svg></div>
+          <h3>Community Safety &amp; Mental Health</h3>
+          <p>Compassionate solutions, safer neighbourhoods, and real support for those who need it.</p>
+          <a class="jump" href="#p1">Read more →</a>
+        </div>
+
+        <div class="pri-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg></div>
+          <h3>Seniors, Taxes &amp; Essential Services</h3>
+          <p>Supporting seniors so they can stay safe, independent, and able to afford to live here.</p>
+          <a class="jump" href="#p2">Read more →</a>
+        </div>
+
+        <div class="pri-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg></div>
+          <h3>Economic Growth &amp; Downtown</h3>
+          <p>Good local jobs and a revitalized downtown that supports small business and culture.</p>
+          <a class="jump" href="#p3">Read more →</a>
+        </div>
+
+        <div class="pri-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="6" height="11"/><rect x="14" y="4" width="6" height="17"/></svg></div>
+          <h3>Responsible Growth &amp; Infrastructure</h3>
+          <p>Development that comes with the roads, services, and safety our residents deserve.</p>
+          <a class="jump" href="#p4">Read more →</a>
+        </div>
+
+        <div class="pri-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16"/><path d="M6 19 10 5h4l4 14"/><path d="M9 13h6"/></svg></div>
+          <h3>Roads That Matter Most</h3>
+          <p>Prioritizing safe, well-maintained roads and reliable essential services.</p>
+          <a class="jump" href="#p5">Read more →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIORITIES DETAIL -->
+  <section style="padding-top:60px;">
+    <div class="wrap">
+      <div class="pri-detail">
+
+        <details class="pri-item" id="p1" open>
+          <summary><span class="num">01</span><h3>Community Safety &amp; Mental Health</h3><span class="chev">+</span></summary>
+          <div class="pri-body">
+            <span class="lede">Compassionate solutions, safer neighbourhoods, and support for those who need it.</span>
+            <p>Our community is facing a growing challenge with addiction and mental health, particularly in the downtown area and around the hospital. Residents should not have to encounter people openly using drugs, smoking substances, or experiencing severe addiction in public spaces while walking with their children. Our children and youth deserve to feel safe in their own community.</p>
+            <p>At the same time, people struggling with addiction deserve compassion, dignity, and access to real help. We need a balanced approach that protects residents while connecting those who are struggling with appropriate treatment, supportive housing, mental health services, and recovery programs.</p>
+            <p>I believe we need safe and properly managed locations and services where people can receive the help they need without putting residents, children, businesses, or public spaces at risk. We can have compassion for those struggling while still maintaining safety, order, and quality of life in our neighbourhoods.</p>
+          </div>
+        </details>
+
+        <details class="pri-item" id="p2">
+          <summary><span class="num">02</span><h3>Seniors, Property Taxes &amp; Essential Services</h3><span class="chev">+</span></summary>
+          <div class="pri-body">
+            <span class="lede">Supporting seniors so they can remain safe, independent, and able to afford to live in our community.</span>
+            <p>Our seniors deserve to be cared for, respected, and supported. Many have spent decades building this community, and they should be able to remain in their homes without being overwhelmed by rising costs.</p>
+            <p>I believe the city should explore a program that partners with local contractors to provide affordable snow removal for seniors — especially those with mobility challenges — helping them stay safe and independent during the winter.</p>
+            <p>We should also look at strengthening the existing property tax deferral program available to qualifying seniors. The current $500 benefit should be reviewed and expanded so it provides meaningful relief to those who need it most.</p>
+            <p>Responsible budgeting, prioritizing essential services, and finding efficiencies should come before continually asking residents to pay more. Our seniors built this community. They deserve to be able to afford to live in it.</p>
+          </div>
+        </details>
+
+        <details class="pri-item" id="p3">
+          <summary><span class="num">03</span><h3>Economic Growth &amp; Downtown Revitalization</h3><span class="chev">+</span></summary>
+          <div class="pri-body">
+            <span class="lede">Supporting workers and small business, creating good jobs, and building a strong, vibrant economy.</span>
+            <p>Niagara Falls has tremendous potential beyond tourism. We need to attract responsible investment while supporting the local entrepreneurs and small businesses that give our community its character.</p>
+            <p>I would like to see the city work closely with the Niagara Region, local unions, businesses, investors, and community organizations to create opportunities for good local jobs and sustainable economic growth.</p>
+            <p>We should also work to revitalize Queen Street and our downtown, making it a place where residents want to spend time — supporting small businesses, restaurants, local shops, arts, culture, and community events to bring people back downtown.</p>
+          </div>
+        </details>
+
+        <details class="pri-item" id="p4">
+          <summary><span class="num">04</span><h3>Responsible Growth, Development &amp; Infrastructure</h3><span class="chev">+</span></summary>
+          <div class="pri-body">
+            <span class="lede">Growth that comes with the infrastructure, services, and safety our residents deserve.</span>
+            <p>Niagara Falls is growing, and growth can be an opportunity — but it must be planned, responsible, and sustainable. New development and investment should come with the infrastructure, roads, traffic management, public services, and safety needed to support it.</p>
+            <p>We must make sure development benefits our community rather than putting additional pressure on the residents who already call Niagara Falls home. I believe we can welcome new families, businesses, and investment while also protecting our existing neighbourhoods and homeowners. Growth should improve our city — not overwhelm it.</p>
+          </div>
+        </details>
+
+        <details class="pri-item" id="p5">
+          <summary><span class="num">05</span><h3>Fix the Roads That Matter Most</h3><span class="chev">+</span></summary>
+          <div class="pri-body">
+            <span class="lede">Prioritizing safe, well-maintained roads and reliable essential services.</span>
+            <p>Road repairs need to be prioritized based on condition, safety, traffic volume, and community importance. Residents should not have to drive over dangerous roads every day while waiting for repairs.</p>
+            <p>Even highly visible areas of the city — such as the roads around our police headquarters, to mention one — should reflect the standard we expect for Niagara Falls.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section id="story" class="section-alt">
+    <div class="wrap story-grid">
+      <div class="story-photo">
+        <div class="frame"></div>
+        <div class="plinth"></div>
+        <img src="assets/nohemi-headshot-cutout.png" alt="Nohemi Renteria in Niagara Falls">
+      </div>
+      <div class="story-copy">
+        <div class="eyebrow">Meet Nohemi</div>
+        <h2>Niagara Falls is home.</h2>
+        <p class="lede">I moved to Niagara Falls in 2015, and over the years, this community became more than a place to live — it became home.</p>
+        <p>My daughters grew up here, and I have watched our city grow and change. To me, Niagara Falls is more than the Falls. It is our people, families, neighbourhoods, small businesses, and heart.</p>
+        <p>With my professional background in international trade and financial management, I understand the importance of responsible planning, sound financial decisions, and sustainable growth. But above all, I have a genuine passion for serving people and strengthening our community.</p>
+        <div class="pull">
+          <p>"I am stepping forward because I believe leadership should listen, serve, and put people first — and I want to help build a Niagara Falls we can all be proud to call home."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / GET INVOLVED -->
+  <section id="involved" class="cta-banner">
+    <div class="wrap">
+      <div class="cta-inner">
+        <div>
+          <div class="eyebrow" style="color:#7FD9BE;">Get Involved</div>
+          <h2>Help bring this vision to Niagara Falls.</h2>
+          <p>Every conversation, lawn sign, and door knocked helps residents across the city get to know Nohemi before October 26th.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="mailto:nrosales0814@gmail.com?subject=I%20want%20to%20donate%20to%20Nohemi's%20campaign" class="btn btn-primary">Donate</a>
+          <a href="mailto:nrosales0814@gmail.com?subject=I%20want%20to%20volunteer%20for%20Nohemi's%20campaign" class="btn btn-outline-light">Volunteer</a>
+        </div>
+      </div>
+      <p class="legal-note">Under Ontario municipal election rules, campaign contributions may only be made by individuals who reside in Ontario. Corporate and union donations are not permitted. Authorized by the Nohemi Renteria Campaign.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Stay Connected</div>
+        <h2>Get in touch</h2>
+        <p>Have a question, a story to share, or want to help out? Reach the campaign directly.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+          <h3>Email</h3>
+          <a class="link" href="mailto:nrosales0814@gmail.com">nrosales0814@gmail.com</a>
+        </div>
+        <div class="contact-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8.1 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.9 2.2Z"/></svg></div>
+          <h3>Phone</h3>
+          <a class="link" href="tel:9053510160">905-351-0160</a>
+        </div>
+        <div class="contact-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div>
+          <h3>Facebook</h3>
+          <a class="link" href="https://www.facebook.com/share/1DcaMuRAME/?mibextid=wwXIfr" target="_blank" rel="noopener">Follow the campaign</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div><span class="fn">NOHEMI</span> <span class="ln">RENTERIA</span></div>
+        <div class="tag">For Niagara Falls City Council</div>
+      </div>
+      <nav class="foot-nav">
+        <a href="#top">Home</a>
+        <a href="#story">My Story</a>
+        <a href="#priorities">Priorities</a>
+        <a href="#involved">Get Involved</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="foot-social">
+        <a href="https://www.facebook.com/share/1DcaMuRAME/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="mailto:nrosales0814@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Nohemi Renteria for City Council. Authorized by the Nohemi Renteria Campaign.</span>
+      <span>Website for information purposes only.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Election-day countdown — Oct 26, 2026, 10:00am (municipal poll open) local time
+  var target = new Date("2026-10-26T10:00:00-04:00").getTime();
+  function tick(){
+    var now = new Date().getTime();
+    var diff = target - now;
+    if(diff < 0){ diff = 0; }
+    var d = Math.floor(diff / (1000*60*60*24));
+    var h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+    var m = Math.floor((diff % (1000*60*60)) / (1000*60));
+    var s = Math.floor((diff % (1000*60)) / 1000);
+    document.getElementById('cd-days').textContent = d;
+    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+  }
+  tick();
+  setInterval(tick, 1000);
+</script>
+
+</body>
+</html>
