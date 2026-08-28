@@ -339,16 +339,45 @@
     .contact-grid{grid-template-columns:1fr;}
     .story-grid{grid-template-columns:1fr;}
     .story-photo{margin-bottom:10px;}
-    nav.mainnav{display:none;}
+
+    /* mobile nav */
+    header{position:relative;}
     .hamburger{display:block;}
+    nav.mainnav{
+      display:none;
+      position:absolute;top:100%;left:0;right:0;
+      flex-direction:column;align-items:stretch;gap:0;
+      background:var(--navy-900);
+      border-top:1px solid rgba(255,255,255,.1);
+      box-shadow:0 20px 30px -14px rgba(0,0,0,.45);
+      padding:6px 28px 18px;
+      max-height:calc(100vh - 100%);overflow-y:auto;
+    }
+    header.nav-open nav.mainnav{display:flex;}
+    nav.mainnav a{
+      padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1);border-bottom-width:1px;
+      width:100%;
+    }
+    nav.mainnav a:last-child{border-bottom:0;}
+
     .cta-inner{flex-direction:column;align-items:flex-start;}
   }
   @media (max-width:560px){
-    .hero h1{font-size:38px;}
-    .sec-head h2{font-size:32px;}
+    .wrap{padding:0 18px;}
+    .headbar{padding:12px 18px;}
+    .hero h1{font-size:34px;}
+    .hero .sub{font-size:18px;}
+    .sec-head h2{font-size:30px;}
     .pri-grid{grid-template-columns:1fr;}
     .infostrip .wrap{flex-direction:column;align-items:flex-start;}
+    #countdown{gap:12px;}
+    #countdown .n{font-size:22px;}
     details.pri-item .pri-body{padding-left:0;margin-top:10px;}
+    details.pri-item summary h3{font-size:20px;}
+    .cta-inner h2{font-size:28px;}
+    .story-copy h2{font-size:30px;}
+    .hero-photo img{height:320px;}
+    .hero-photo{min-height:300px;}
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -374,7 +403,7 @@
     </nav>
     <div class="navcta">
       <a href="#involved" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Donate</a>
-      <button class="hamburger" aria-label="Menu">☰</button>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false">☰</button>
     </div>
   </div>
 </header>
@@ -392,7 +421,7 @@
         <div class="pillars">Safer Neighbourhoods<span class="dot">•</span>Seniors First<span class="dot">•</span>Responsible Growth</div>
         <div class="hero-actions">
           <a href="#story" class="btn btn-primary">Meet Nohemi</a>
-          <a href="#priorities" class="btn btn-outline-dark">See Her Priorities</a>
+          <a href="#priorities" class="btn btn-outline-dark">See My Priorities</a>
         </div>
       </div>
       <div class="hero-photo">
@@ -670,6 +699,24 @@
   }
   tick();
   setInterval(tick, 1000);
+
+  // Mobile nav toggle
+  var headerEl = document.querySelector('header');
+  var hamburgerBtn = document.querySelector('.hamburger');
+  if(hamburgerBtn){
+    hamburgerBtn.addEventListener('click', function(){
+      var isOpen = headerEl.classList.toggle('nav-open');
+      hamburgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      hamburgerBtn.textContent = isOpen ? '✕' : '☰';
+    });
+    document.querySelectorAll('nav.mainnav a').forEach(function(a){
+      a.addEventListener('click', function(){
+        headerEl.classList.remove('nav-open');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+        hamburgerBtn.textContent = '☰';
+      });
+    });
+  }
 </script>
 
 </body>
