@@ -106,6 +106,14 @@
   nav.mainnav a:hover{color:var(--white);border-color:var(--teal-600);}
   .navcta{display:flex;align-items:center;gap:18px;}
   .hamburger{display:none;background:none;border:0;color:var(--white);font-size:26px;cursor:pointer;}
+  .langswitch{display:flex;gap:2px;background:rgba(255,255,255,.08);border-radius:6px;padding:3px;flex:none;}
+  .lang-btn{
+    background:none;border:0;color:rgba(255,255,255,.6);
+    font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.03em;
+    padding:6px 9px;border-radius:4px;cursor:pointer;transition:background .15s,color .15s;
+  }
+  .lang-btn:hover{color:var(--white);}
+  .lang-btn.active{background:var(--teal-600);color:var(--white);}
 
   /* ===== Hero ===== */
   .hero{
@@ -365,7 +373,9 @@
   }
   @media (max-width:560px){
     .wrap{padding:0 18px;}
-    .headbar{padding:12px 18px;}
+    .headbar{padding:12px 18px;flex-wrap:wrap;}
+    .langswitch{order:1;}
+    .navcta{gap:10px;}
     .hero h1{font-size:34px;}
     .hero .sub{font-size:18px;}
     .sec-head h2{font-size:30px;}
@@ -394,17 +404,22 @@
     <a href="#top" class="brand">
       <span class="fn">NOHEMI</span>
       <span class="ln">RENTERIA</span>
-      <span class="tag">For Niagara Falls City Council</span>
+      <span class="tag" data-i18n="brand_tag">For Niagara Falls City Council</span>
     </a>
     <nav class="mainnav">
-      <a href="#story">My Story</a>
-      <a href="#priorities">Priorities</a>
-      <a href="#involved">Get Involved</a>
-      <a href="#contact">Contact</a>
+      <a href="#story" data-i18n="nav_story">My Story</a>
+      <a href="#priorities" data-i18n="nav_priorities">Priorities</a>
+      <a href="#involved" data-i18n="nav_involved">Get Involved</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
     </nav>
     <div class="navcta">
-      <a href="#involved" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Donate</a>
-      <button class="hamburger" aria-label="Menu" aria-expanded="false">☰</button>
+      <div class="langswitch" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="en" type="button">EN</button>
+        <button class="lang-btn" data-lang="es" type="button">ES</button>
+        <button class="lang-btn" data-lang="fr" type="button">FR</button>
+      </div>
+      <a href="#involved" class="btn btn-primary" data-i18n="btn_donate" style="padding:10px 20px;font-size:14px;">Donate</a>
+      <button class="hamburger" aria-label="Menu" data-i18n-aria="menu_aria" aria-expanded="false">☰</button>
     </div>
   </div>
 </header>
@@ -415,14 +430,14 @@
   <section class="hero" style="padding-top:64px;">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <div class="eyebrow">2026 Municipal Election · Niagara Falls</div>
-        <h1>NIAGARA FALLS:<br><span class="accent">MORE THAN THE FALLS.</span></h1>
-        <div class="sub">Our Community. Our Future.</div>
+        <div class="eyebrow" data-i18n="hero_eyebrow">2026 Municipal Election · Niagara Falls</div>
+        <h1 data-i18n-html="hero_h1">NIAGARA FALLS:<br><span class="accent">MORE THAN THE FALLS.</span></h1>
+        <div class="sub" data-i18n="hero_sub">Our Community. Our Future.</div>
         <svg class="wave" viewBox="0 0 90 14"><path d="M1 10 c13,-8 21,-8 29,0 c13,-8 21,-8 29,0 c13,-8 21,-8 29,0"/></svg>
-        <div class="pillars">Safer Neighbourhoods<span class="dot">•</span>Seniors First<span class="dot">•</span>Responsible Growth</div>
+        <div class="pillars"><span data-i18n="pillar1">Safer Neighbourhoods</span><span class="dot">•</span><span data-i18n="pillar2">Seniors First</span><span class="dot">•</span><span data-i18n="pillar3">Responsible Growth</span></div>
         <div class="hero-actions">
-          <a href="#story" class="btn btn-primary">Meet Nohemi</a>
-          <a href="#priorities" class="btn btn-outline-dark">See My Priorities</a>
+          <a href="#story" class="btn btn-primary" data-i18n="btn_meet_nohemi">Meet Nohemi</a>
+          <a href="#priorities" class="btn btn-outline-dark" data-i18n="btn_see_priorities">See My Priorities</a>
         </div>
       </div>
       <div class="hero-photo">
@@ -432,7 +447,7 @@
           <span class="dot"></span>
           <div>
             <div class="t1">Nohemi Renteria</div>
-            <div class="t2">2026 Certified Candidate · Niagara Falls</div>
+            <div class="t2" data-i18n="badge_t2">2026 Certified Candidate · Niagara Falls</div>
           </div>
         </div>
       </div>
@@ -443,18 +458,18 @@
   <div class="infostrip">
     <div class="wrap">
       <div class="istat">
-        <span class="num">At-Large</span>
-        <span class="lbl">City Council seat<br>— votes city-wide</span>
+        <span class="num" data-i18n="istat_seat_num">At-Large</span>
+        <span class="lbl" data-i18n-html="istat_seat_lbl">City Council seat<br>— votes city-wide</span>
       </div>
       <div id="countdown">
-        <div><span class="n" id="cd-days">--</span><span class="l">Days</span></div>
-        <div><span class="n" id="cd-hours">--</span><span class="l">Hrs</span></div>
-        <div><span class="n" id="cd-mins">--</span><span class="l">Min</span></div>
-        <div><span class="n" id="cd-secs">--</span><span class="l">Sec</span></div>
+        <div><span class="n" id="cd-days">--</span><span class="l" data-i18n="cd_days">Days</span></div>
+        <div><span class="n" id="cd-hours">--</span><span class="l" data-i18n="cd_hrs">Hrs</span></div>
+        <div><span class="n" id="cd-mins">--</span><span class="l" data-i18n="cd_min">Min</span></div>
+        <div><span class="n" id="cd-secs">--</span><span class="l" data-i18n="cd_sec">Sec</span></div>
       </div>
       <div class="istat">
-        <span class="num">Oct 26</span>
-        <span class="lbl">Election Day<br>10am – 8pm</span>
+        <span class="num" data-i18n="istat_date_num">Oct 26</span>
+        <span class="lbl" data-i18n-html="istat_date_lbl">Election Day<br>10am – 8pm</span>
       </div>
     </div>
   </div>
@@ -463,53 +478,53 @@
   <section id="priorities" class="section-alt">
     <div class="wrap">
       <div class="sec-head">
-        <div class="eyebrow">Where Nohemi Stands</div>
-        <h2>Six priorities for a stronger Niagara Falls</h2>
-        <p>Real issues residents raise every day — not a long policy essay. Tap any priority below to read Nohemi's full position.</p>
+        <div class="eyebrow" data-i18n="pri_eyebrow">Where Nohemi Stands</div>
+        <h2 data-i18n="pri_h2">Six priorities for a stronger Niagara Falls</h2>
+        <p data-i18n="pri_intro">Real issues residents raise every day — not a long policy essay. Tap any priority below to read Nohemi's full position.</p>
       </div>
 
       <div class="pri-grid">
 
         <div class="pri-card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6z"/></svg></div>
-          <h3>Community Safety &amp; Mental Health</h3>
-          <p>Compassionate solutions, safer neighbourhoods, and real support for those who need it.</p>
-          <a class="jump" href="#p1">Read more →</a>
+          <h3 data-i18n="p1_card_title">Community Safety &amp; Mental Health</h3>
+          <p data-i18n="p1_card_desc">Compassionate solutions, safer neighbourhoods, and real support for those who need it.</p>
+          <a class="jump" href="#p1" data-i18n="read_more">Read more →</a>
         </div>
 
         <div class="pri-card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg></div>
-          <h3>Seniors, Taxes &amp; Essential Services</h3>
-          <p>Supporting seniors so they can stay safe, independent, and able to afford to live here.</p>
-          <a class="jump" href="#p2">Read more →</a>
+          <h3 data-i18n="p2_card_title">Seniors, Taxes &amp; Essential Services</h3>
+          <p data-i18n="p2_card_desc">Supporting seniors so they can stay safe, independent, and able to afford to live here.</p>
+          <a class="jump" href="#p2" data-i18n="read_more">Read more →</a>
         </div>
 
         <div class="pri-card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg></div>
-          <h3>Economic Growth &amp; Downtown</h3>
-          <p>Good local jobs and a revitalized downtown that supports small business and culture.</p>
-          <a class="jump" href="#p3">Read more →</a>
+          <h3 data-i18n="p3_card_title">Economic Growth &amp; Downtown</h3>
+          <p data-i18n="p3_card_desc">Good local jobs and a revitalized downtown that supports small business and culture.</p>
+          <a class="jump" href="#p3" data-i18n="read_more">Read more →</a>
         </div>
 
         <div class="pri-card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="6" height="11"/><rect x="14" y="4" width="6" height="17"/></svg></div>
-          <h3>Responsible Growth &amp; Infrastructure</h3>
-          <p>Development that comes with the roads, services, and safety our residents deserve.</p>
-          <a class="jump" href="#p4">Read more →</a>
+          <h3 data-i18n="p4_card_title">Responsible Growth &amp; Infrastructure</h3>
+          <p data-i18n="p4_card_desc">Development that comes with the roads, services, and safety our residents deserve.</p>
+          <a class="jump" href="#p4" data-i18n="read_more">Read more →</a>
         </div>
 
         <div class="pri-card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16"/><path d="M6 19 10 5h4l4 14"/><path d="M9 13h6"/></svg></div>
-          <h3>Roads That Matter Most</h3>
-          <p>Prioritizing safe, well-maintained roads and reliable essential services.</p>
-          <a class="jump" href="#p5">Read more →</a>
+          <h3 data-i18n="p5_card_title">Roads That Matter Most</h3>
+          <p data-i18n="p5_card_desc">Prioritizing safe, well-maintained roads and reliable essential services.</p>
+          <a class="jump" href="#p5" data-i18n="read_more">Read more →</a>
         </div>
 
         <div class="pri-card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-          <h3>Responsible Spending &amp; Transparency</h3>
-          <p>Every taxpayer deserves to know where their money is going.</p>
-          <a class="jump" href="#p6">Read more →</a>
+          <h3 data-i18n="p6_card_title">Responsible Spending &amp; Transparency</h3>
+          <p data-i18n="p6_card_desc">Every taxpayer deserves to know where their money is going.</p>
+          <a class="jump" href="#p6" data-i18n="read_more">Read more →</a>
         </div>
 
       </div>
@@ -522,59 +537,59 @@
       <div class="pri-detail">
 
         <details class="pri-item" id="p1" open>
-          <summary><span class="num">01</span><h3>Community Safety &amp; Mental Health</h3><span class="chev">+</span></summary>
+          <summary><span class="num">01</span><h3 data-i18n="p1_detail_title">Community Safety &amp; Mental Health</h3><span class="chev">+</span></summary>
           <div class="pri-body">
-            <span class="lede">Compassionate solutions, safer neighbourhoods, and support for those who need it.</span>
-            <p>Our community is facing a growing challenge with addiction and mental health, particularly in the downtown area and around the hospital. Residents should not have to encounter people openly using drugs, smoking substances, or experiencing severe addiction in public spaces while walking with their children. Our children and youth deserve to feel safe in their own community.</p>
-            <p>At the same time, people struggling with addiction deserve compassion, dignity, and access to real help. We need a balanced approach that protects residents while connecting those who are struggling with appropriate treatment, supportive housing, mental health services, and recovery programs.</p>
-            <p>I believe we need safe and properly managed locations and services where people can receive the help they need without putting residents, children, businesses, or public spaces at risk. We can have compassion for those struggling while still maintaining safety, order, and quality of life in our neighbourhoods.</p>
+            <span class="lede" data-i18n="p1_lede">Compassionate solutions, safer neighbourhoods, and support for those who need it.</span>
+            <p data-i18n="p1_body1">Our community is facing a growing challenge with addiction and mental health, particularly in the downtown area and around the hospital. Residents should not have to encounter people openly using drugs, smoking substances, or experiencing severe addiction in public spaces while walking with their children. Our children and youth deserve to feel safe in their own community.</p>
+            <p data-i18n="p1_body2">At the same time, people struggling with addiction deserve compassion, dignity, and access to real help. We need a balanced approach that protects residents while connecting those who are struggling with appropriate treatment, supportive housing, mental health services, and recovery programs.</p>
+            <p data-i18n="p1_body3">I believe we need safe and properly managed locations and services where people can receive the help they need without putting residents, children, businesses, or public spaces at risk. We can have compassion for those struggling while still maintaining safety, order, and quality of life in our neighbourhoods.</p>
           </div>
         </details>
 
         <details class="pri-item" id="p2">
-          <summary><span class="num">02</span><h3>Seniors, Property Taxes &amp; Essential Services</h3><span class="chev">+</span></summary>
+          <summary><span class="num">02</span><h3 data-i18n="p2_detail_title">Seniors, Property Taxes &amp; Essential Services</h3><span class="chev">+</span></summary>
           <div class="pri-body">
-            <span class="lede">Supporting seniors so they can remain safe, independent, and able to afford to live in our community.</span>
-            <p>Our seniors deserve to be cared for, respected, and supported. Many have spent decades building this community, and they should be able to remain in their homes without being overwhelmed by rising costs.</p>
-            <p>I believe the city should explore a program that partners with local contractors to provide affordable snow removal for seniors — especially those with mobility challenges — helping them stay safe and independent during the winter.</p>
-            <p>We should also look at strengthening the existing property tax deferral program available to qualifying seniors. The current $500 benefit should be reviewed and expanded so it provides meaningful relief to those who need it most.</p>
-            <p>Responsible budgeting, prioritizing essential services, and finding efficiencies should come before continually asking residents to pay more. Our seniors built this community. They deserve to be able to afford to live in it.</p>
+            <span class="lede" data-i18n="p2_lede">Supporting seniors so they can remain safe, independent, and able to afford to live in our community.</span>
+            <p data-i18n="p2_body1">Our seniors deserve to be cared for, respected, and supported. Many have spent decades building this community, and they should be able to remain in their homes without being overwhelmed by rising costs.</p>
+            <p data-i18n="p2_body2">I believe the city should explore a program that partners with local contractors to provide affordable snow removal for seniors — especially those with mobility challenges — helping them stay safe and independent during the winter.</p>
+            <p data-i18n="p2_body3">We should also look at strengthening the existing property tax deferral program available to qualifying seniors. The current $500 benefit should be reviewed and expanded so it provides meaningful relief to those who need it most.</p>
+            <p data-i18n="p2_body4">Responsible budgeting, prioritizing essential services, and finding efficiencies should come before continually asking residents to pay more. Our seniors built this community. They deserve to be able to afford to live in it.</p>
           </div>
         </details>
 
         <details class="pri-item" id="p3">
-          <summary><span class="num">03</span><h3>Economic Growth &amp; Downtown Revitalization</h3><span class="chev">+</span></summary>
+          <summary><span class="num">03</span><h3 data-i18n="p3_detail_title">Economic Growth &amp; Downtown Revitalization</h3><span class="chev">+</span></summary>
           <div class="pri-body">
-            <span class="lede">Supporting workers and small business, creating good jobs, and building a strong, vibrant economy.</span>
-            <p>Niagara Falls has tremendous potential beyond tourism. We need to attract responsible investment while supporting the local entrepreneurs and small businesses that give our community its character.</p>
-            <p>I would like to see the city work closely with the Niagara Region, local unions, businesses, investors, and community organizations to create opportunities for good local jobs and sustainable economic growth.</p>
-            <p>We should also work to revitalize Queen Street and our downtown, making it a place where residents want to spend time — supporting small businesses, restaurants, local shops, arts, culture, and community events to bring people back downtown.</p>
+            <span class="lede" data-i18n="p3_lede">Supporting workers and small business, creating good jobs, and building a strong, vibrant economy.</span>
+            <p data-i18n="p3_body1">Niagara Falls has tremendous potential beyond tourism. We need to attract responsible investment while supporting the local entrepreneurs and small businesses that give our community its character.</p>
+            <p data-i18n="p3_body2">I would like to see the city work closely with the Niagara Region, local unions, businesses, investors, and community organizations to create opportunities for good local jobs and sustainable economic growth.</p>
+            <p data-i18n="p3_body3">We should also work to revitalize Queen Street and our downtown, making it a place where residents want to spend time — supporting small businesses, restaurants, local shops, arts, culture, and community events to bring people back downtown.</p>
           </div>
         </details>
 
         <details class="pri-item" id="p4">
-          <summary><span class="num">04</span><h3>Responsible Growth, Development &amp; Infrastructure</h3><span class="chev">+</span></summary>
+          <summary><span class="num">04</span><h3 data-i18n="p4_detail_title">Responsible Growth, Development &amp; Infrastructure</h3><span class="chev">+</span></summary>
           <div class="pri-body">
-            <span class="lede">Growth that comes with the infrastructure, services, and safety our residents deserve.</span>
-            <p>Niagara Falls is growing, and growth can be an opportunity — but it must be planned, responsible, and sustainable. New development and investment should come with the infrastructure, roads, traffic management, public services, and safety needed to support it.</p>
-            <p>We must make sure development benefits our community rather than putting additional pressure on the residents who already call Niagara Falls home. I believe we can welcome new families, businesses, and investment while also protecting our existing neighbourhoods and homeowners. Growth should improve our city — not overwhelm it.</p>
+            <span class="lede" data-i18n="p4_lede">Growth that comes with the infrastructure, services, and safety our residents deserve.</span>
+            <p data-i18n="p4_body1">Niagara Falls is growing, and growth can be an opportunity — but it must be planned, responsible, and sustainable. New development and investment should come with the infrastructure, roads, traffic management, public services, and safety needed to support it.</p>
+            <p data-i18n="p4_body2">We must make sure development benefits our community rather than putting additional pressure on the residents who already call Niagara Falls home. I believe we can welcome new families, businesses, and investment while also protecting our existing neighbourhoods and homeowners. Growth should improve our city — not overwhelm it.</p>
           </div>
         </details>
 
         <details class="pri-item" id="p5">
-          <summary><span class="num">05</span><h3>Fix the Roads That Matter Most</h3><span class="chev">+</span></summary>
+          <summary><span class="num">05</span><h3 data-i18n="p5_detail_title">Fix the Roads That Matter Most</h3><span class="chev">+</span></summary>
           <div class="pri-body">
-            <span class="lede">Prioritizing safe, well-maintained roads and reliable essential services.</span>
-            <p>Road repairs need to be prioritized based on condition, safety, traffic volume, and community importance. Residents should not have to drive over dangerous roads every day while waiting for repairs.</p>
-            <p>Even highly visible areas of the city — such as the roads around our police headquarters, to mention one — should reflect the standard we expect for Niagara Falls.</p>
+            <span class="lede" data-i18n="p5_lede">Prioritizing safe, well-maintained roads and reliable essential services.</span>
+            <p data-i18n="p5_body1">Road repairs need to be prioritized based on condition, safety, traffic volume, and community importance. Residents should not have to drive over dangerous roads every day while waiting for repairs.</p>
+            <p data-i18n="p5_body2">Even highly visible areas of the city — such as the roads around our police headquarters, to mention one — should reflect the standard we expect for Niagara Falls.</p>
           </div>
         </details>
 
         <details class="pri-item" id="p6">
-          <summary><span class="num">06</span><h3>Responsible Spending &amp; Transparency</h3><span class="chev">+</span></summary>
+          <summary><span class="num">06</span><h3 data-i18n="p6_detail_title">Responsible Spending &amp; Transparency</h3><span class="chev">+</span></summary>
           <div class="pri-body">
-            <span class="lede">Every taxpayer deserves to know where their money is going.</span>
-            <p>We can achieve true financial transparency by maximizing our existing resources and staff. I will advocate for the city council to provide clear, regular financial summaries directly on our city website. My focus is on eliminating waste, carefully reviewing department budgets, and ensuring your tax dollars go directly back into our community.</p>
+            <span class="lede" data-i18n="p6_lede">Every taxpayer deserves to know where their money is going.</span>
+            <p data-i18n="p6_body1">We can achieve true financial transparency by maximizing our existing resources and staff. I will advocate for the city council to provide clear, regular financial summaries directly on our city website. My focus is on eliminating waste, carefully reviewing department budgets, and ensuring your tax dollars go directly back into our community.</p>
           </div>
         </details>
 
@@ -591,14 +606,14 @@
         <img src="assets/image.png" alt="Nohemi Renteria in Niagara Falls">
       </div>
       <div class="story-copy">
-        <div class="eyebrow">Meet Nohemi</div>
-        <h2>Niagara Falls is home.</h2>
-        <p class="lede">I moved to Niagara Falls in 2015, and over the years, this community became more than a place to live — it became home.</p>
-        <p>My daughters grew up here, and I have watched our city grow and change. To me, Niagara Falls is more than the Falls. It is our people, families, neighbourhoods, small businesses, and heart.</p>
-        <p>With my professional background in international trade and financial management, I understand the importance of responsible planning, sound financial decisions, and sustainable growth. However, numbers only matter if they make lives better. True financial responsibility means investing wisely in our collective future. But above all, I have a genuine passion for serving people and strengthening our community.</p>
-        <p>My commitment to our city is rooted in a deep love for serving others. Over the years, I have dedicated myself to hands-on work within our community—both through my church and independently. I have focused much of my time on supporting our seniors, ensuring they have the care and connection they deserve, and welcoming newcomers as they build their lives in our neighborhoods. These experiences have taught me that true leadership is about listening to people, lifting each other up, and protecting the vulnerable.</p>
+        <div class="eyebrow" data-i18n="btn_meet_nohemi">Meet Nohemi</div>
+        <h2 data-i18n="story_h2">Niagara Falls is home.</h2>
+        <p class="lede" data-i18n="story_lede">I moved to Niagara Falls in 2015, and over the years, this community became more than a place to live — it became home.</p>
+        <p data-i18n="story_p1">My daughters grew up here, and I have watched our city grow and change. To me, Niagara Falls is more than the Falls. It is our people, families, neighbourhoods, small businesses, and heart.</p>
+        <p data-i18n="story_p2">With my professional background in international trade and financial management, I understand the importance of responsible planning, sound financial decisions, and sustainable growth. However, numbers only matter if they make lives better. True financial responsibility means investing wisely in our collective future. But above all, I have a genuine passion for serving people and strengthening our community.</p>
+        <p data-i18n="story_p3">My commitment to our city is rooted in a deep love for serving others. Over the years, I have dedicated myself to hands-on work within our community—both through my church and independently. I have focused much of my time on supporting our seniors, ensuring they have the care and connection they deserve, and welcoming newcomers as they build their lives in our neighborhoods. These experiences have taught me that true leadership is about listening to people, lifting each other up, and protecting the vulnerable.</p>
         <div class="pull">
-          <p>"I am stepping forward because I believe leadership should listen, serve, and put people first — and I want to help build a Niagara Falls we can all be proud to call home."</p>
+          <p data-i18n="story_quote_wrapped">"I am stepping forward because I believe leadership should listen, serve, and put people first — and I want to help build a Niagara Falls we can all be proud to call home."</p>
         </div>
       </div>
     </div>
@@ -609,16 +624,16 @@
     <div class="wrap">
       <div class="cta-inner">
         <div>
-          <div class="eyebrow" style="color:#7FD9BE;">Get Involved</div>
-          <h2>Help bring this vision to Niagara Falls.</h2>
-          <p>Every conversation, lawn sign, and door knocked helps residents across the city get to know Nohemi before October 26th.</p>
+          <div class="eyebrow" style="color:#7FD9BE;" data-i18n="cta_eyebrow">Get Involved</div>
+          <h2 data-i18n="cta_h2">Help bring this vision to Niagara Falls.</h2>
+          <p data-i18n="cta_p">Every conversation, lawn sign, and door knocked helps residents across the city get to know Nohemi before October 26th.</p>
         </div>
         <div class="cta-actions">
-          <a href="mailto:Nohemi.renteria2026@gmail.com?subject=I%20want%20to%20donate%20to%20Nohemi's%20campaign" class="btn btn-primary">Donate</a>
-          <a href="mailto:Nohemi.renteria2026@gmail.com?subject=I%20want%20to%20volunteer%20for%20Nohemi's%20campaign" class="btn btn-outline-light">Volunteer</a>
+          <a href="mailto:Nohemi.renteria2026@gmail.com?subject=I%20want%20to%20donate%20to%20Nohemi's%20campaign" class="btn btn-primary" data-i18n="btn_donate" data-mailto-subject="donate_subject">Donate</a>
+          <a href="mailto:Nohemi.renteria2026@gmail.com?subject=I%20want%20to%20volunteer%20for%20Nohemi's%20campaign" class="btn btn-outline-light" data-i18n="btn_volunteer" data-mailto-subject="volunteer_subject">Volunteer</a>
         </div>
       </div>
-      <p class="legal-note">Under Ontario municipal election rules, campaign contributions may only be made by individuals who reside in Ontario. Corporate and union donations are not permitted. Authorized by the Nohemi Renteria Campaign.</p>
+      <p class="legal-note" data-i18n="legal_note">Under Ontario municipal election rules, campaign contributions may only be made by individuals who reside in Ontario. Corporate and union donations are not permitted. Authorized by the Nohemi Renteria Campaign.</p>
     </div>
   </section>
 
@@ -626,25 +641,25 @@
   <section id="contact">
     <div class="wrap">
       <div class="sec-head">
-        <div class="eyebrow">Stay Connected</div>
-        <h2>Get in touch</h2>
-        <p>Have a question, a story to share, or want to help out? Reach the campaign directly.</p>
+        <div class="eyebrow" data-i18n="contact_eyebrow">Stay Connected</div>
+        <h2 data-i18n="contact_h2">Get in touch</h2>
+        <p data-i18n="contact_p">Have a question, a story to share, or want to help out? Reach the campaign directly.</p>
       </div>
       <div class="contact-grid">
         <div class="contact-card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
-          <h3>Email</h3>
+          <h3 data-i18n="contact_email_label">Email</h3>
           <a class="link" href="mailto:Nohemi.renteria2026@gmail.com">Nohemi.renteria2026@gmail.com</a>
         </div>
         <div class="contact-card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8.1 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.9 2.2Z"/></svg></div>
-          <h3>Phone</h3>
+          <h3 data-i18n="contact_phone_label">Phone</h3>
           <a class="link" href="tel:9053510160">905-351-0160</a>
         </div>
         <div class="contact-card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div>
-          <h3>Facebook</h3>
-          <a class="link" href="https://www.facebook.com/share/1DcaMuRAME/?mibextid=wwXIfr" target="_blank" rel="noopener">Follow the campaign</a>
+          <h3 data-i18n="contact_facebook_label">Facebook</h3>
+          <a class="link" href="https://www.facebook.com/share/1DcaMuRAME/?mibextid=wwXIfr" target="_blank" rel="noopener" data-i18n="contact_facebook_link">Follow the campaign</a>
         </div>
       </div>
     </div>
@@ -657,27 +672,27 @@
     <div class="foot-top">
       <div class="foot-brand">
         <div><span class="fn">NOHEMI</span> <span class="ln">RENTERIA</span></div>
-        <div class="tag">For Niagara Falls City Council</div>
+        <div class="tag" data-i18n="brand_tag">For Niagara Falls City Council</div>
       </div>
       <nav class="foot-nav">
-        <a href="#top">Home</a>
-        <a href="#story">My Story</a>
-        <a href="#priorities">Priorities</a>
-        <a href="#involved">Get Involved</a>
-        <a href="#contact">Contact</a>
+        <a href="#top" data-i18n="nav_home">Home</a>
+        <a href="#story" data-i18n="nav_story">My Story</a>
+        <a href="#priorities" data-i18n="nav_priorities">Priorities</a>
+        <a href="#involved" data-i18n="nav_involved">Get Involved</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
       </nav>
       <div class="foot-social">
-        <a href="https://www.facebook.com/share/1DcaMuRAME/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
+        <a href="https://www.facebook.com/share/1DcaMuRAME/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" data-i18n-aria="contact_facebook_label">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
         </a>
-        <a href="mailto:Nohemi.renteria2026@gmail.com" aria-label="Email">
+        <a href="mailto:Nohemi.renteria2026@gmail.com" aria-label="Email" data-i18n-aria="contact_email_label">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
         </a>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Nohemi Renteria for City Council. Authorized by the Nohemi Renteria Campaign.</span>
-      <span>Website for information purposes only.</span>
+      <span data-i18n="footer_copyright">© 2026 Nohemi Renteria for City Council. Authorized by the Nohemi Renteria Campaign.</span>
+      <span data-i18n="footer_note">Website for information purposes only.</span>
     </div>
   </div>
 </footer>
@@ -718,6 +733,286 @@
       });
     });
   }
+
+  // ===== Language switcher (EN / ES / FR) =====
+  var I18N = {
+    en: {
+      title: `Nohemi Renteria for Niagara Falls City Council — 2026`,
+      metaDescription: `Nohemi Renteria, certified candidate for Niagara Falls City Council, 2026 Municipal Election. Community safety, seniors, responsible growth, and a stronger downtown.`,
+      nav_story: `My Story`, nav_priorities: `Priorities`, nav_involved: `Get Involved`, nav_contact: `Contact`, nav_home: `Home`,
+      brand_tag: `For Niagara Falls City Council`, btn_donate: `Donate`, menu_aria: `Menu`,
+      hero_eyebrow: `2026 Municipal Election · Niagara Falls`,
+      hero_h1: `NIAGARA FALLS:<br><span class="accent">MORE THAN THE FALLS.</span>`,
+      hero_sub: `Our Community. Our Future.`,
+      pillar1: `Safer Neighbourhoods`, pillar2: `Seniors First`, pillar3: `Responsible Growth`,
+      btn_meet_nohemi: `Meet Nohemi`, btn_see_priorities: `See My Priorities`,
+      badge_t2: `2026 Certified Candidate · Niagara Falls`,
+      istat_seat_num: `At-Large`, istat_seat_lbl: `City Council seat<br>— votes city-wide`,
+      cd_days: `Days`, cd_hrs: `Hrs`, cd_min: `Min`, cd_sec: `Sec`,
+      istat_date_num: `Oct 26`, istat_date_lbl: `Election Day<br>10am – 8pm`,
+      pri_eyebrow: `Where Nohemi Stands`, pri_h2: `Six priorities for a stronger Niagara Falls`,
+      pri_intro: `Real issues residents raise every day — not a long policy essay. Tap any priority below to read Nohemi's full position.`,
+      read_more: `Read more →`,
+      p1_card_title: `Community Safety & Mental Health`,
+      p1_card_desc: `Compassionate solutions, safer neighbourhoods, and real support for those who need it.`,
+      p1_detail_title: `Community Safety & Mental Health`,
+      p1_lede: `Compassionate solutions, safer neighbourhoods, and support for those who need it.`,
+      p1_body1: `Our community is facing a growing challenge with addiction and mental health, particularly in the downtown area and around the hospital. Residents should not have to encounter people openly using drugs, smoking substances, or experiencing severe addiction in public spaces while walking with their children. Our children and youth deserve to feel safe in their own community.`,
+      p1_body2: `At the same time, people struggling with addiction deserve compassion, dignity, and access to real help. We need a balanced approach that protects residents while connecting those who are struggling with appropriate treatment, supportive housing, mental health services, and recovery programs.`,
+      p1_body3: `I believe we need safe and properly managed locations and services where people can receive the help they need without putting residents, children, businesses, or public spaces at risk. We can have compassion for those struggling while still maintaining safety, order, and quality of life in our neighbourhoods.`,
+      p2_card_title: `Seniors, Taxes & Essential Services`,
+      p2_card_desc: `Supporting seniors so they can stay safe, independent, and able to afford to live here.`,
+      p2_detail_title: `Seniors, Property Taxes & Essential Services`,
+      p2_lede: `Supporting seniors so they can remain safe, independent, and able to afford to live in our community.`,
+      p2_body1: `Our seniors deserve to be cared for, respected, and supported. Many have spent decades building this community, and they should be able to remain in their homes without being overwhelmed by rising costs.`,
+      p2_body2: `I believe the city should explore a program that partners with local contractors to provide affordable snow removal for seniors — especially those with mobility challenges — helping them stay safe and independent during the winter.`,
+      p2_body3: `We should also look at strengthening the existing property tax deferral program available to qualifying seniors. The current $500 benefit should be reviewed and expanded so it provides meaningful relief to those who need it most.`,
+      p2_body4: `Responsible budgeting, prioritizing essential services, and finding efficiencies should come before continually asking residents to pay more. Our seniors built this community. They deserve to be able to afford to live in it.`,
+      p3_card_title: `Economic Growth & Downtown`,
+      p3_card_desc: `Good local jobs and a revitalized downtown that supports small business and culture.`,
+      p3_detail_title: `Economic Growth & Downtown Revitalization`,
+      p3_lede: `Supporting workers and small business, creating good jobs, and building a strong, vibrant economy.`,
+      p3_body1: `Niagara Falls has tremendous potential beyond tourism. We need to attract responsible investment while supporting the local entrepreneurs and small businesses that give our community its character.`,
+      p3_body2: `I would like to see the city work closely with the Niagara Region, local unions, businesses, investors, and community organizations to create opportunities for good local jobs and sustainable economic growth.`,
+      p3_body3: `We should also work to revitalize Queen Street and our downtown, making it a place where residents want to spend time — supporting small businesses, restaurants, local shops, arts, culture, and community events to bring people back downtown.`,
+      p4_card_title: `Responsible Growth & Infrastructure`,
+      p4_card_desc: `Development that comes with the roads, services, and safety our residents deserve.`,
+      p4_detail_title: `Responsible Growth, Development & Infrastructure`,
+      p4_lede: `Growth that comes with the infrastructure, services, and safety our residents deserve.`,
+      p4_body1: `Niagara Falls is growing, and growth can be an opportunity — but it must be planned, responsible, and sustainable. New development and investment should come with the infrastructure, roads, traffic management, public services, and safety needed to support it.`,
+      p4_body2: `We must make sure development benefits our community rather than putting additional pressure on the residents who already call Niagara Falls home. I believe we can welcome new families, businesses, and investment while also protecting our existing neighbourhoods and homeowners. Growth should improve our city — not overwhelm it.`,
+      p5_card_title: `Roads That Matter Most`,
+      p5_card_desc: `Prioritizing safe, well-maintained roads and reliable essential services.`,
+      p5_detail_title: `Fix the Roads That Matter Most`,
+      p5_lede: `Prioritizing safe, well-maintained roads and reliable essential services.`,
+      p5_body1: `Road repairs need to be prioritized based on condition, safety, traffic volume, and community importance. Residents should not have to drive over dangerous roads every day while waiting for repairs.`,
+      p5_body2: `Even highly visible areas of the city — such as the roads around our police headquarters, to mention one — should reflect the standard we expect for Niagara Falls.`,
+      p6_card_title: `Responsible Spending & Transparency`,
+      p6_card_desc: `Every taxpayer deserves to know where their money is going.`,
+      p6_detail_title: `Responsible Spending & Transparency`,
+      p6_lede: `Every taxpayer deserves to know where their money is going.`,
+      p6_body1: `We can achieve true financial transparency by maximizing our existing resources and staff. I will advocate for the city council to provide clear, regular financial summaries directly on our city website. My focus is on eliminating waste, carefully reviewing department budgets, and ensuring your tax dollars go directly back into our community.`,
+      story_h2: `Niagara Falls is home.`,
+      story_lede: `I moved to Niagara Falls in 2015, and over the years, this community became more than a place to live — it became home.`,
+      story_p1: `My daughters grew up here, and I have watched our city grow and change. To me, Niagara Falls is more than the Falls. It is our people, families, neighbourhoods, small businesses, and heart.`,
+      story_p2: `With my professional background in international trade and financial management, I understand the importance of responsible planning, sound financial decisions, and sustainable growth. However, numbers only matter if they make lives better. True financial responsibility means investing wisely in our collective future. But above all, I have a genuine passion for serving people and strengthening our community.`,
+      story_p3: `My commitment to our city is rooted in a deep love for serving others. Over the years, I have dedicated myself to hands-on work within our community—both through my church and independently. I have focused much of my time on supporting our seniors, ensuring they have the care and connection they deserve, and welcoming newcomers as they build their lives in our neighborhoods. These experiences have taught me that true leadership is about listening to people, lifting each other up, and protecting the vulnerable.`,
+      story_quote_wrapped: `"I am stepping forward because I believe leadership should listen, serve, and put people first — and I want to help build a Niagara Falls we can all be proud to call home."`,
+      cta_eyebrow: `Get Involved`, cta_h2: `Help bring this vision to Niagara Falls.`,
+      cta_p: `Every conversation, lawn sign, and door knocked helps residents across the city get to know Nohemi before October 26th.`,
+      btn_volunteer: `Volunteer`,
+      donate_subject: `I want to donate to Nohemi's campaign`,
+      volunteer_subject: `I want to volunteer for Nohemi's campaign`,
+      legal_note: `Under Ontario municipal election rules, campaign contributions may only be made by individuals who reside in Ontario. Corporate and union donations are not permitted. Authorized by the Nohemi Renteria Campaign.`,
+      contact_eyebrow: `Stay Connected`, contact_h2: `Get in touch`,
+      contact_p: `Have a question, a story to share, or want to help out? Reach the campaign directly.`,
+      contact_email_label: `Email`, contact_phone_label: `Phone`, contact_facebook_label: `Facebook`,
+      contact_facebook_link: `Follow the campaign`,
+      footer_copyright: `© 2026 Nohemi Renteria for City Council. Authorized by the Nohemi Renteria Campaign.`,
+      footer_note: `Website for information purposes only.`
+    },
+    es: {
+      title: `Nohemi Renteria para el Concejo Municipal de Niagara Falls — 2026`,
+      metaDescription: `Nohemi Renteria, candidata certificada al Concejo Municipal de Niagara Falls, Elección Municipal 2026. Seguridad comunitaria, personas mayores, crecimiento responsable y un centro urbano más fuerte.`,
+      nav_story: `Mi Historia`, nav_priorities: `Prioridades`, nav_involved: `Participa`, nav_contact: `Contacto`, nav_home: `Inicio`,
+      brand_tag: `Para el Concejo Municipal de Niagara Falls`, btn_donate: `Donar`, menu_aria: `Menú`,
+      hero_eyebrow: `Elección Municipal 2026 · Niagara Falls`,
+      hero_h1: `NIAGARA FALLS:<br><span class="accent">MÁS QUE LAS CATARATAS.</span>`,
+      hero_sub: `Nuestra Comunidad. Nuestro Futuro.`,
+      pillar1: `Barrios Más Seguros`, pillar2: `Personas Mayores Primero`, pillar3: `Crecimiento Responsable`,
+      btn_meet_nohemi: `Conoce a Nohemi`, btn_see_priorities: `Ver Mis Prioridades`,
+      badge_t2: `Candidata Certificada 2026 · Niagara Falls`,
+      istat_seat_num: `General`, istat_seat_lbl: `Puesto en el Concejo Municipal<br>— votación en toda la ciudad`,
+      cd_days: `Días`, cd_hrs: `Hrs`, cd_min: `Min`, cd_sec: `Seg`,
+      istat_date_num: `26 de oct.`, istat_date_lbl: `Día de la Elección<br>10 a.m. – 8 p.m.`,
+      pri_eyebrow: `La Postura de Nohemi`, pri_h2: `Seis prioridades para una Niagara Falls más fuerte`,
+      pri_intro: `Los problemas reales que los residentes plantean cada día — no un extenso documento de políticas. Toca cualquier prioridad para leer la posición completa de Nohemi.`,
+      read_more: `Leer más →`,
+      p1_card_title: `Seguridad Comunitaria y Salud Mental`,
+      p1_card_desc: `Soluciones compasivas, barrios más seguros y apoyo real para quienes lo necesitan.`,
+      p1_detail_title: `Seguridad Comunitaria y Salud Mental`,
+      p1_lede: `Soluciones compasivas, barrios más seguros y apoyo para quienes lo necesitan.`,
+      p1_body1: `Nuestra comunidad enfrenta un desafío creciente con la adicción y la salud mental, particularmente en el centro de la ciudad y alrededor del hospital. Los residentes no deberían tener que encontrarse con personas consumiendo drogas abiertamente, fumando sustancias o viviendo una adicción severa en espacios públicos mientras caminan con sus hijos. Nuestros niños y jóvenes merecen sentirse seguros en su propia comunidad.`,
+      p1_body2: `Al mismo tiempo, las personas que luchan contra la adicción merecen compasión, dignidad y acceso a ayuda real. Necesitamos un enfoque equilibrado que proteja a los residentes mientras conecta a quienes lo necesitan con tratamiento adecuado, vivienda de apoyo, servicios de salud mental y programas de recuperación.`,
+      p1_body3: `Creo que necesitamos lugares y servicios seguros y bien administrados donde las personas puedan recibir la ayuda que necesitan sin poner en riesgo a los residentes, los niños, los negocios o los espacios públicos. Podemos tener compasión por quienes están luchando y, al mismo tiempo, mantener la seguridad, el orden y la calidad de vida en nuestros barrios.`,
+      p2_card_title: `Personas Mayores, Impuestos y Servicios Esenciales`,
+      p2_card_desc: `Apoyando a las personas mayores para que puedan vivir seguras, independientes y con la posibilidad de quedarse aquí.`,
+      p2_detail_title: `Personas Mayores, Impuestos a la Propiedad y Servicios Esenciales`,
+      p2_lede: `Apoyando a las personas mayores para que se mantengan seguras, independientes y con la posibilidad de vivir en nuestra comunidad.`,
+      p2_body1: `Nuestras personas mayores merecen ser atendidas, respetadas y apoyadas. Muchas han dedicado décadas a construir esta comunidad, y deberían poder permanecer en sus hogares sin verse abrumadas por el aumento de costos.`,
+      p2_body2: `Creo que la ciudad debería explorar un programa que se asocie con contratistas locales para ofrecer remoción de nieve asequible para personas mayores — especialmente aquellas con problemas de movilidad — ayudándolas a mantenerse seguras e independientes durante el invierno.`,
+      p2_body3: `También deberíamos fortalecer el programa existente de diferimiento del impuesto a la propiedad disponible para las personas mayores que califiquen. El beneficio actual de $500 debería revisarse y ampliarse para que brinde un alivio significativo a quienes más lo necesitan.`,
+      p2_body4: `Un presupuesto responsable, priorizar los servicios esenciales y buscar eficiencias deben venir antes de pedirles constantemente a los residentes que paguen más. Nuestras personas mayores construyeron esta comunidad. Merecen poder vivir en ella.`,
+      p3_card_title: `Crecimiento Económico y Centro de la Ciudad`,
+      p3_card_desc: `Buenos empleos locales y un centro urbano revitalizado que apoya a los pequeños negocios y a la cultura.`,
+      p3_detail_title: `Crecimiento Económico y Revitalización del Centro de la Ciudad`,
+      p3_lede: `Apoyando a los trabajadores y a los pequeños negocios, creando buenos empleos y construyendo una economía sólida y vibrante.`,
+      p3_body1: `Niagara Falls tiene un potencial enorme más allá del turismo. Necesitamos atraer inversión responsable mientras apoyamos a los emprendedores y pequeños negocios locales que le dan a nuestra comunidad su carácter.`,
+      p3_body2: `Me gustaría que la ciudad trabajara de cerca con la Región de Niágara, los sindicatos locales, los negocios, los inversionistas y las organizaciones comunitarias para crear oportunidades de buenos empleos locales y un crecimiento económico sostenible.`,
+      p3_body3: `También deberíamos trabajar para revitalizar Queen Street y nuestro centro urbano, convirtiéndolo en un lugar donde los residentes quieran pasar tiempo — apoyando a los pequeños negocios, restaurantes, tiendas locales, el arte, la cultura y los eventos comunitarios para atraer de nuevo a la gente al centro.`,
+      p4_card_title: `Crecimiento Responsable e Infraestructura`,
+      p4_card_desc: `Desarrollo que viene acompañado de las calles, los servicios y la seguridad que nuestros residentes merecen.`,
+      p4_detail_title: `Crecimiento Responsable, Desarrollo e Infraestructura`,
+      p4_lede: `Crecimiento que viene acompañado de la infraestructura, los servicios y la seguridad que nuestros residentes merecen.`,
+      p4_body1: `Niagara Falls está creciendo, y el crecimiento puede ser una oportunidad — pero debe ser planificado, responsable y sostenible. El nuevo desarrollo e inversión deben venir acompañados de la infraestructura, las calles, la gestión del tráfico, los servicios públicos y la seguridad necesarios para sostenerlo.`,
+      p4_body2: `Debemos asegurarnos de que el desarrollo beneficie a nuestra comunidad en lugar de poner más presión sobre los residentes que ya llaman hogar a Niagara Falls. Creo que podemos recibir a nuevas familias, negocios e inversión mientras también protegemos a nuestros barrios y propietarios de vivienda actuales. El crecimiento debe mejorar nuestra ciudad — no abrumarla.`,
+      p5_card_title: `Las Calles Que Más Importan`,
+      p5_card_desc: `Priorizando calles seguras y bien mantenidas, y servicios esenciales confiables.`,
+      p5_detail_title: `Arreglar las Calles Que Más Importan`,
+      p5_lede: `Priorizando calles seguras y bien mantenidas, y servicios esenciales confiables.`,
+      p5_body1: `Las reparaciones de calles deben priorizarse según su condición, seguridad, volumen de tráfico e importancia para la comunidad. Los residentes no deberían tener que conducir todos los días sobre calles peligrosas mientras esperan las reparaciones.`,
+      p5_body2: `Incluso las áreas más visibles de la ciudad — como las calles alrededor de nuestra jefatura de policía, por mencionar una — deberían reflejar el estándar que esperamos para Niagara Falls.`,
+      p6_card_title: `Gasto Responsable y Transparencia`,
+      p6_card_desc: `Cada contribuyente merece saber a dónde va su dinero.`,
+      p6_detail_title: `Gasto Responsable y Transparencia`,
+      p6_lede: `Cada contribuyente merece saber a dónde va su dinero.`,
+      p6_body1: `Podemos lograr una verdadera transparencia financiera maximizando nuestros recursos y personal existentes. Voy a abogar para que el concejo municipal proporcione resúmenes financieros claros y regulares directamente en el sitio web de la ciudad. Mi enfoque está en eliminar el desperdicio, revisar cuidadosamente los presupuestos de cada departamento y asegurar que los dólares de sus impuestos regresen directamente a nuestra comunidad.`,
+      story_h2: `Niagara Falls es mi hogar.`,
+      story_lede: `Me mudé a Niagara Falls en 2015, y con los años, esta comunidad se convirtió en algo más que un lugar para vivir — se convirtió en mi hogar.`,
+      story_p1: `Mis hijas crecieron aquí, y he visto a nuestra ciudad crecer y cambiar. Para mí, Niagara Falls es más que las cataratas. Es nuestra gente, nuestras familias, nuestros barrios, nuestros pequeños negocios y nuestro corazón.`,
+      story_p2: `Con mi trayectoria profesional en comercio internacional y gestión financiera, entiendo la importancia de una planificación responsable, decisiones financieras sólidas y un crecimiento sostenible. Sin embargo, los números solo importan si mejoran la vida de las personas. La verdadera responsabilidad financiera significa invertir sabiamente en nuestro futuro colectivo. Pero, por encima de todo, tengo una pasión genuina por servir a las personas y fortalecer nuestra comunidad.`,
+      story_p3: `Mi compromiso con nuestra ciudad nace de un profundo amor por servir a los demás. A lo largo de los años, me he dedicado a un trabajo práctico dentro de nuestra comunidad — tanto a través de mi iglesia como de manera independiente. He dedicado gran parte de mi tiempo a apoyar a nuestras personas mayores, asegurándome de que tengan el cuidado y la conexión que merecen, y dando la bienvenida a quienes llegan a construir su vida en nuestros barrios. Estas experiencias me han enseñado que el verdadero liderazgo consiste en escuchar a las personas, apoyarnos mutuamente y proteger a los más vulnerables.`,
+      story_quote_wrapped: `"Doy este paso porque creo que el liderazgo debe escuchar, servir y poner a las personas primero — y quiero ayudar a construir una Niagara Falls de la que todos podamos sentirnos orgullosos de llamar hogar."`,
+      cta_eyebrow: `Participa`, cta_h2: `Ayuda a traer esta visión a Niagara Falls.`,
+      cta_p: `Cada conversación, cada letrero en el jardín y cada puerta tocada ayuda a que los residentes de toda la ciudad conozcan a Nohemi antes del 26 de octubre.`,
+      btn_volunteer: `Ser Voluntario`,
+      donate_subject: `Quiero donar a la campaña de Nohemi`,
+      volunteer_subject: `Quiero ser voluntario para la campaña de Nohemi`,
+      legal_note: `Según las reglas de las elecciones municipales de Ontario, las contribuciones de campaña solo pueden ser hechas por personas que residan en Ontario. No se permiten donaciones corporativas ni sindicales. Autorizado por la Campaña de Nohemi Renteria.`,
+      contact_eyebrow: `Mantente en Contacto`, contact_h2: `Ponte en contacto`,
+      contact_p: `¿Tienes una pregunta, una historia que compartir, o quieres ayudar? Comunícate directamente con la campaña.`,
+      contact_email_label: `Correo Electrónico`, contact_phone_label: `Teléfono`, contact_facebook_label: `Facebook`,
+      contact_facebook_link: `Sigue la campaña`,
+      footer_copyright: `© 2026 Nohemi Renteria para el Concejo Municipal. Autorizado por la Campaña de Nohemi Renteria.`,
+      footer_note: `Sitio web solo con fines informativos.`
+    },
+    fr: {
+      title: `Nohemi Renteria pour le conseil municipal de Niagara Falls — 2026`,
+      metaDescription: `Nohemi Renteria, candidate certifiée au conseil municipal de Niagara Falls, élection municipale 2026. Sécurité communautaire, aînés, croissance responsable et un centre-ville plus fort.`,
+      nav_story: `Mon Histoire`, nav_priorities: `Priorités`, nav_involved: `S'impliquer`, nav_contact: `Contact`, nav_home: `Accueil`,
+      brand_tag: `Pour le conseil municipal de Niagara Falls`, btn_donate: `Faire un don`, menu_aria: `Menu`,
+      hero_eyebrow: `Élection municipale 2026 · Niagara Falls`,
+      hero_h1: `NIAGARA FALLS :<br><span class="accent">PLUS QUE LES CHUTES.</span>`,
+      hero_sub: `Notre communauté. Notre avenir.`,
+      pillar1: `Des quartiers plus sûrs`, pillar2: `Les aînés d'abord`, pillar3: `Une croissance responsable`,
+      btn_meet_nohemi: `Rencontrer Nohemi`, btn_see_priorities: `Voir mes priorités`,
+      badge_t2: `Candidate certifiée 2026 · Niagara Falls`,
+      istat_seat_num: `Poste général`, istat_seat_lbl: `Siège au conseil municipal<br>— élu à l'échelle de la ville`,
+      cd_days: `Jours`, cd_hrs: `Hres`, cd_min: `Min`, cd_sec: `Sec`,
+      istat_date_num: `26 oct.`, istat_date_lbl: `Jour du scrutin<br>10 h – 20 h`,
+      pri_eyebrow: `La position de Nohemi`, pri_h2: `Six priorités pour un Niagara Falls plus fort`,
+      pri_intro: `Les enjeux réels que les résidents soulèvent chaque jour — pas un long document de politiques. Cliquez sur une priorité pour lire la position complète de Nohemi.`,
+      read_more: `Lire la suite →`,
+      p1_card_title: `Sécurité communautaire et santé mentale`,
+      p1_card_desc: `Des solutions humaines, des quartiers plus sûrs et un soutien réel pour ceux qui en ont besoin.`,
+      p1_detail_title: `Sécurité communautaire et santé mentale`,
+      p1_lede: `Des solutions humaines, des quartiers plus sûrs et un soutien pour ceux qui en ont besoin.`,
+      p1_body1: `Notre communauté fait face à un défi croissant lié à la dépendance et à la santé mentale, particulièrement dans le centre-ville et autour de l'hôpital. Les résidents ne devraient pas avoir à croiser des personnes consommant ouvertement des drogues, fumant des substances ou vivant une dépendance sévère dans les espaces publics en marchant avec leurs enfants. Nos enfants et nos jeunes méritent de se sentir en sécurité dans leur propre communauté.`,
+      p1_body2: `En même temps, les personnes aux prises avec une dépendance méritent compassion, dignité et accès à une aide réelle. Nous avons besoin d'une approche équilibrée qui protège les résidents tout en orientant les personnes en difficulté vers un traitement approprié, un logement de soutien, des services de santé mentale et des programmes de rétablissement.`,
+      p1_body3: `Je crois que nous avons besoin de lieux et de services sécuritaires et bien gérés où les personnes peuvent recevoir l'aide dont elles ont besoin sans mettre en danger les résidents, les enfants, les commerces ou les espaces publics. Nous pouvons avoir de la compassion pour les personnes en difficulté tout en maintenant la sécurité, l'ordre et la qualité de vie dans nos quartiers.`,
+      p2_card_title: `Aînés, taxes et services essentiels`,
+      p2_card_desc: `Soutenir les aînés pour qu'ils puissent rester en sécurité, autonomes et capables de vivre ici.`,
+      p2_detail_title: `Aînés, taxes foncières et services essentiels`,
+      p2_lede: `Soutenir les aînés pour qu'ils demeurent en sécurité, autonomes et capables de vivre dans notre communauté.`,
+      p2_body1: `Nos aînés méritent d'être soignés, respectés et soutenus. Plusieurs ont passé des décennies à bâtir cette communauté, et ils devraient pouvoir rester dans leur foyer sans être accablés par la hausse des coûts.`,
+      p2_body2: `Je crois que la ville devrait explorer un programme en partenariat avec des entrepreneurs locaux afin d'offrir un déneigement abordable aux aînés — particulièrement ceux ayant des problèmes de mobilité — pour les aider à rester en sécurité et autonomes durant l'hiver.`,
+      p2_body3: `Nous devrions également renforcer le programme existant de report de la taxe foncière offert aux aînés admissibles. L'aide actuelle de 500 $ devrait être révisée et bonifiée afin d'offrir un soulagement significatif à ceux qui en ont le plus besoin.`,
+      p2_body4: `Une budgétisation responsable, la priorisation des services essentiels et la recherche d'efficacités doivent primer avant de demander continuellement aux résidents de payer davantage. Nos aînés ont bâti cette communauté. Ils méritent de pouvoir y vivre.`,
+      p3_card_title: `Croissance économique et centre-ville`,
+      p3_card_desc: `De bons emplois locaux et un centre-ville revitalisé qui soutient les petites entreprises et la culture.`,
+      p3_detail_title: `Croissance économique et revitalisation du centre-ville`,
+      p3_lede: `Soutenir les travailleurs et les petites entreprises, créer de bons emplois et bâtir une économie forte et dynamique.`,
+      p3_body1: `Niagara Falls a un potentiel immense au-delà du tourisme. Nous devons attirer des investissements responsables tout en soutenant les entrepreneurs et petites entreprises locales qui donnent à notre communauté son caractère.`,
+      p3_body2: `J'aimerais que la ville travaille étroitement avec la région de Niagara, les syndicats locaux, les entreprises, les investisseurs et les organismes communautaires afin de créer des occasions de bons emplois locaux et une croissance économique durable.`,
+      p3_body3: `Nous devrions aussi revitaliser la rue Queen et notre centre-ville, en faisant un endroit où les résidents ont envie de passer du temps — en soutenant les petites entreprises, les restaurants, les commerces locaux, les arts, la culture et les événements communautaires pour ramener les gens au centre-ville.`,
+      p4_card_title: `Croissance responsable et infrastructures`,
+      p4_card_desc: `Un développement accompagné des routes, des services et de la sécurité que nos résidents méritent.`,
+      p4_detail_title: `Croissance responsable, développement et infrastructures`,
+      p4_lede: `Une croissance accompagnée des infrastructures, des services et de la sécurité que nos résidents méritent.`,
+      p4_body1: `Niagara Falls est en croissance, et la croissance peut être une occasion — mais elle doit être planifiée, responsable et durable. Les nouveaux développements et investissements doivent s'accompagner des infrastructures, des routes, de la gestion de la circulation, des services publics et de la sécurité nécessaires pour les soutenir.`,
+      p4_body2: `Nous devons nous assurer que le développement profite à notre communauté plutôt que d'ajouter de la pression sur les résidents qui appellent déjà Niagara Falls leur foyer. Je crois que nous pouvons accueillir de nouvelles familles, entreprises et investissements tout en protégeant nos quartiers et propriétaires actuels. La croissance devrait améliorer notre ville — pas l'accabler.`,
+      p5_card_title: `Les routes qui comptent le plus`,
+      p5_card_desc: `Prioriser des routes sécuritaires et bien entretenues, ainsi que des services essentiels fiables.`,
+      p5_detail_title: `Réparer les routes qui comptent le plus`,
+      p5_lede: `Prioriser des routes sécuritaires et bien entretenues, ainsi que des services essentiels fiables.`,
+      p5_body1: `Les réparations routières doivent être priorisées selon l'état, la sécurité, le volume de circulation et l'importance pour la communauté. Les résidents ne devraient pas avoir à circuler chaque jour sur des routes dangereuses en attendant les réparations.`,
+      p5_body2: `Même les secteurs les plus visibles de la ville — comme les routes autour de notre quartier général de police, pour n'en nommer qu'un — devraient refléter la norme que nous attendons pour Niagara Falls.`,
+      p6_card_title: `Dépenses responsables et transparence`,
+      p6_card_desc: `Chaque contribuable mérite de savoir où va son argent.`,
+      p6_detail_title: `Dépenses responsables et transparence`,
+      p6_lede: `Chaque contribuable mérite de savoir où va son argent.`,
+      p6_body1: `Nous pouvons atteindre une véritable transparence financière en maximisant nos ressources et notre personnel existants. Je vais militer pour que le conseil municipal fournisse des sommaires financiers clairs et réguliers directement sur le site web de la ville. Mon objectif est d'éliminer le gaspillage, d'examiner attentivement les budgets des différents services et de veiller à ce que vos dollars d'impôts reviennent directement à notre communauté.`,
+      story_h2: `Niagara Falls, c'est chez moi.`,
+      story_lede: `Je me suis installée à Niagara Falls en 2015, et au fil des années, cette communauté est devenue bien plus qu'un endroit où vivre — elle est devenue mon foyer.`,
+      story_p1: `Mes filles ont grandi ici, et j'ai vu notre ville grandir et changer. Pour moi, Niagara Falls, c'est plus que les chutes. C'est nos gens, nos familles, nos quartiers, nos petites entreprises et notre cœur.`,
+      story_p2: `Avec mon parcours professionnel en commerce international et en gestion financière, je comprends l'importance d'une planification responsable, de décisions financières judicieuses et d'une croissance durable. Cependant, les chiffres n'ont d'importance que s'ils améliorent la vie des gens. Une véritable responsabilité financière signifie investir judicieusement dans notre avenir collectif. Mais surtout, j'ai une passion sincère pour servir les gens et renforcer notre communauté.`,
+      story_p3: `Mon engagement envers notre ville prend racine dans un profond amour du service aux autres. Au fil des années, je me suis consacrée à un travail concret au sein de notre communauté — à la fois par mon église et de façon indépendante. J'ai consacré une grande partie de mon temps à soutenir nos aînés, à veiller à ce qu'ils reçoivent les soins et le lien humain qu'ils méritent, et à accueillir les nouveaux arrivants qui bâtissent leur vie dans nos quartiers. Ces expériences m'ont appris que le vrai leadership consiste à écouter les gens, à s'entraider et à protéger les plus vulnérables.`,
+      story_quote_wrapped: `"Je me présente parce que je crois que le leadership doit écouter, servir et mettre les gens au premier plan — et je veux aider à bâtir un Niagara Falls que nous pourrons tous être fiers d'appeler notre foyer."`,
+      cta_eyebrow: `S'impliquer`, cta_h2: `Aidez à concrétiser cette vision pour Niagara Falls.`,
+      cta_p: `Chaque conversation, chaque pancarte sur un terrain et chaque porte cognée aide les résidents de toute la ville à connaître Nohemi avant le 26 octobre.`,
+      btn_volunteer: `Faire du bénévolat`,
+      donate_subject: `Je veux faire un don à la campagne de Nohemi`,
+      volunteer_subject: `Je veux faire du bénévolat pour la campagne de Nohemi`,
+      legal_note: `Selon les règles des élections municipales de l'Ontario, les contributions à la campagne ne peuvent être faites que par des personnes résidant en Ontario. Les dons corporatifs et syndicaux ne sont pas permis. Autorisé par la campagne de Nohemi Renteria.`,
+      contact_eyebrow: `Restons en contact`, contact_h2: `Communiquez avec nous`,
+      contact_p: `Vous avez une question, une histoire à partager, ou vous voulez donner un coup de main? Communiquez directement avec la campagne.`,
+      contact_email_label: `Courriel`, contact_phone_label: `Téléphone`, contact_facebook_label: `Facebook`,
+      contact_facebook_link: `Suivre la campagne`,
+      footer_copyright: `© 2026 Nohemi Renteria pour le conseil municipal. Autorisé par la campagne de Nohemi Renteria.`,
+      footer_note: `Site web à titre informatif seulement.`
+    }
+  };
+
+  function applyLanguage(lang){
+    var dict = I18N[lang] || I18N.en;
+    document.documentElement.lang = lang;
+    if(dict.title){ document.title = dict.title; }
+    var metaDesc = document.querySelector('meta[name="description"]');
+    if(metaDesc && dict.metaDescription){ metaDesc.setAttribute('content', dict.metaDescription); }
+
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      if(dict[key] !== undefined){ el.textContent = dict[key]; }
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+      var key = el.getAttribute('data-i18n-html');
+      if(dict[key] !== undefined){ el.innerHTML = dict[key]; }
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(function(el){
+      var key = el.getAttribute('data-i18n-aria');
+      if(dict[key] !== undefined){ el.setAttribute('aria-label', dict[key]); }
+    });
+    document.querySelectorAll('[data-mailto-subject]').forEach(function(el){
+      var key = el.getAttribute('data-mailto-subject');
+      var subject = dict[key];
+      if(subject === undefined) return;
+      var href = el.getAttribute('href') || '';
+      var emailPart = href.split('?')[0];
+      el.setAttribute('href', emailPart + '?subject=' + encodeURIComponent(subject));
+    });
+
+    document.querySelectorAll('.lang-btn').forEach(function(btn){
+      var isActive = btn.getAttribute('data-lang') === lang;
+      btn.classList.toggle('active', isActive);
+    });
+
+    try{ localStorage.setItem('nr-site-lang', lang); }catch(e){}
+  }
+
+  var savedLang = 'en';
+  try{
+    var stored = localStorage.getItem('nr-site-lang');
+    if(stored){ savedLang = stored; }
+  }catch(e){}
+
+  document.querySelectorAll('.lang-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      applyLanguage(btn.getAttribute('data-lang'));
+    });
+  });
+
+  applyLanguage(savedLang);
+
 </script>
 
 </body>
